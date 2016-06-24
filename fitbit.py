@@ -31,7 +31,7 @@ class Fitbit():
 
     def GetAuthorizationUri(self):
 
-        # Parameters for authorization, make sure to select 
+        # Parameters for authorization, make sure to select
         params = {
             'client_id': self.CLIENT_ID,
             'response_type':  'code',
@@ -137,4 +137,3 @@ class Fitbit():
             self.ApiCall(token, apiCall)
         else:
             raise Exception("Something went wrong requesting (%s): %s" % (resp['errors'][0]['errorType'], resp['errors'][0]['message']))
-
