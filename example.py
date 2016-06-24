@@ -1,5 +1,7 @@
 import fitbit, json
 
+
+activityfile = "activity.txt"
 tokenfile = "user_settings.txt"
 
 z = fitbit.Fitbit();
@@ -7,6 +9,8 @@ z = fitbit.Fitbit();
 # Try to read existing token pair
 try:
     token = json.load(open(tokenfile))
+    activity = json.load(open(activityfile))
+	
 except IOError:
     # If not generate a new file
     # Get the authorization URL for user to complete in browser.
@@ -27,5 +31,9 @@ response = z.ApiCall(token, '/1/user/-/profile.json')
 token = response['token']
 json.dump(token, open(tokenfile,'w'))
 
+activity = z.ApiCall(token, '/1/user/4QTKYC/activities/date/2016-06-23.json')
+json.dump(activity, open(activityfile, 'w'))
+
+
 # Do something with the response
-print "Welcome %s!" % response['user']['displayName']
+
