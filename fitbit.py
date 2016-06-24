@@ -16,7 +16,7 @@ class Fitbit():
     # All information must be as on the https://dev.fitbit.com/apps page.
     CLIENT_ID     = '227TPW'
     CLIENT_SECRET = '56cdf9638522eb2c0aa022a0e0f7ae44'
-    REDIRECT_URI  = 'http://127.0.0.1:8000/token/'
+    REDIRECT_URI  = 'http://javabreak.herokuapp.com/token/'
 
     # Decide which information the FitBit.py should have access to.
     # Options: 'activity', 'heartrate', 'location', 'nutrition',
